@@ -36,8 +36,8 @@ def player_animation():
         player_index += 0.1
         if player_index >= len(player_walk): player_index = 0
         player_surf = player_walk[int(player_index)]
-    #play walking animation if player is on floor
-    #show jump surf when player is not on floor
+
+
 
 #boilerplate
 pygame.init()
@@ -60,10 +60,18 @@ ground_surf = pygame.image.load("graphics/Ground.png").convert()
 # score_rect = score_surf.get_rect(center = (400, 50))
 
 #snail code
-snail_surf = pygame.image.load("graphics/snail/snail1.png").convert_alpha()
+snail_walk1 = pygame.image.load("graphics/snail/snail1.png").convert_alpha()
+snail_walk2 = pygame.image.load("graphics/snail/snail2.png").convert_alpha()
+snail_walk = [snail_walk1, snail_walk2]
+snail.index = 0
+snail_surf = snail_walk[snail.index]
 snail_x_pos = 600
 
-fly_surf = pygame.image.load("graphics/Fly/Fly1.png").convert_alpha()
+fly_walk1 = pygame.image.load("graphics/Fly/Fly1.png").convert_alpha()
+fly_walk2 = pygame.image.load("graphics/Fly/Fly2.png").convert_alpha()
+fly_walk = [fly_walk1, fly_walk2]
+fly.index = 0
+fly_surf = fly_walk[fly.index]
 
 obstacle_rect_list = []
 
